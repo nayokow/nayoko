@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
-const heroImage = '/images/hero-portrait.jpg';
+const heroImage = '/images/hero-portrait.png';
 const speakingImage1 = '/images/speaking-1.jpg';
 const speakingImage2 = '/images/speaking-2.jpg';
 const speakingImage3 = '/images/speaking-3.jpg';
 const podcastImage = '/images/podcast-feature.jpg';
 const nkLogo = '/images/nk-logo.png';
 const prestigeArticle = '/images/article-prestige.jpg';
-const businessArticle = '/images/article-business.jpg';
+const businessArticle = '/images/article-business.jpeg';
 const indonesiaArticle = '/images/article-indonesia.jpg';
-const magazineArticle = '/images/article-magazine.jpg';
+const magazineArticle = '/images/article-magazine.jpeg';
 
 export default function App() {
   const [formData, setFormData] = useState({
