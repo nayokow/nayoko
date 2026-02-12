@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
-const heroImage = '/images/hero-portrait.svg';
-const speakingImage1 = '/images/speaking-1.svg';
-const speakingImage2 = '/images/speaking-2.svg';
-const speakingImage3 = '/images/speaking-3.svg';
-const podcastImage = '/images/podcast-feature.svg';
-const nkLogo = '/images/nk-logo.svg';
-const prestigeArticle = '/images/article-prestige.svg';
-const businessArticle = '/images/article-business.svg';
-const indonesiaArticle = '/images/article-indonesia.svg';
-const magazineArticle = '/images/article-magazine.svg';
+const heroImage = '/images/hero-portrait.jpg';
+const speakingImage1 = '/images/speaking-1.jpg';
+const speakingImage2 = '/images/speaking-2.jpg';
+const speakingImage3 = '/images/speaking-3.jpg';
+const podcastImage = '/images/podcast-feature.jpg';
+const nkLogo = '/images/nk-logo.png';
+const prestigeArticle = '/images/article-prestige.jpg';
+const businessArticle = '/images/article-business.jpg';
+const indonesiaArticle = '/images/article-indonesia.jpg';
+const magazineArticle = '/images/article-magazine.jpg';
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -280,7 +280,7 @@ export default function App() {
           {/* Featured podcast/media image full width */}
           <div className="mb-12">
             <div className="border border-white/20 hover:border-[#E70100] transition-all duration-300 overflow-hidden">
-              <img src={podcastImage} alt="Big Thinkers Podcast" className="w-full h-auto" loading="lazy" />
+              <img src={podcastImage} alt="Tech in Asia Conference" className="w-full h-[400px] object-cover" loading="lazy" />
             </div>
           </div>
 
@@ -292,7 +292,7 @@ export default function App() {
               { src: speakingImage3, alt: 'Keynote Address' },
             ].map((img) => (
               <div key={img.alt} className="border border-white/20 hover:border-[#E70100] transition-all duration-300 cursor-pointer overflow-hidden group">
-                <img src={img.src} alt={img.alt} className="w-full h-auto group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
+                <img src={img.src} alt={img.alt} className="w-full h-[280px] object-cover group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
               </div>
             ))}
           </div>
@@ -322,7 +322,7 @@ export default function App() {
               { src: magazineArticle, alt: 'Forbes Asia Feature' },
             ].map((img) => (
               <div key={img.alt} className="border border-white/20 hover:border-[#E70100] transition-all duration-300 cursor-pointer overflow-hidden group">
-                <img src={img.src} alt={img.alt} className="w-full h-auto group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
+                <img src={img.src} alt={img.alt} className="w-full h-[320px] object-cover group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
               </div>
             ))}
           </div>
