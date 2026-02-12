@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#0a0a0a"/>
+  <!-- Header -->
+  <text x="300" y="90" font-family="'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">BUSINESS</text>
+  <text x="300" y="130" font-family="'Helvetica Neue', Arial, sans-serif" font-size="38" font-weight="300" fill="#ffffff" text-anchor="middle" letter-spacing="3">INSIDER</text>
+  <!-- Divider -->
+  <line x1="200" y1="150" x2="400" y2="150" stroke="#E70100" stroke-width="2"/>
+  <!-- Article lines -->
+  <g opacity="0.12">
+    <rect x="80" y="185" width="440" height="2" fill="#fff"/>
+    <rect x="100" y="205" width="400" height="2" fill="#fff"/>
+    <rect x="90" y="225" width="420" height="2" fill="#fff"/>
+    <rect x="110" y="245" width="380" height="2" fill="#fff"/>
+    <rect x="80" y="265" width="440" height="2" fill="#fff"/>
+    <rect x="100" y="285" width="400" height="2" fill="#fff"/>
+    <rect x="120" y="305" width="360" height="2" fill="#fff"/>
+  </g>
+  <!-- Corner accent -->
+  <rect x="0" y="0" width="4" height="60" fill="#E70100" opacity="0.6"/>
+</svg>

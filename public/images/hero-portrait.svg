@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0300"/>
+      <stop offset="100%" stop-color="#130200"/>
+    </linearGradient>
+    <linearGradient id="silhouette" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a0500"/>
+      <stop offset="100%" stop-color="#1a0300"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <rect x="2" y="2" width="596" height="796" fill="none" stroke="#E70100" stroke-opacity="0.15" stroke-width="1" rx="4"/>
+  <!-- Head -->
+  <ellipse cx="300" cy="280" rx="95" ry="115" fill="url(#silhouette)"/>
+  <!-- Shoulders/Body -->
+  <path d="M140 800 C140 520, 200 440, 300 420 C400 440, 460 520, 460 800 Z" fill="url(#silhouette)"/>
+  <!-- Subtle accent line -->
+  <line x1="120" y1="760" x2="480" y2="760" stroke="#E70100" stroke-opacity="0.2" stroke-width="1"/>
+</svg>

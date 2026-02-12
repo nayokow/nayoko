@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0a0a0a"/>
+  <!-- Podium -->
+  <g opacity="0.5">
+    <polygon points="160,200 240,200 255,270 145,270" fill="none" stroke="#E70100" stroke-width="1.5"/>
+    <line x1="200" y1="160" x2="200" y2="200" stroke="#E70100" stroke-width="1.5"/>
+    <circle cx="200" cy="150" r="12" fill="none" stroke="#E70100" stroke-width="1.5"/>
+  </g>
+  <!-- Spotlight suggestion -->
+  <polygon points="200,0 130,120 270,120" fill="#E70100" fill-opacity="0.03"/>
+  <text x="200" y="240" font-family="'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" fill-opacity="0.9" text-anchor="middle" letter-spacing="6">SPEAKING EVENT</text>
+  <line x1="120" y1="252" x2="280" y2="252" stroke="#E70100" stroke-width="1" stroke-opacity="0.4"/>
+</svg>
