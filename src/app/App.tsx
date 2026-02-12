@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const heroImage = '/images/hero-portrait.png';
 const speakingImage1 = '/images/speaking-1.jpg';
@@ -17,19 +17,15 @@ const marketeersArticle = '/images/article-marketeers.jpg';
 const teamAlgoritma = '/images/team-algoritma.jpeg';
 
 export default function App() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    intent: ''
-  });
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('TRANSMISSION RECEIVED. We will respond within 48 hours.');
-    setFormData({ name: '', email: '', intent: '' });
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -385,61 +381,11 @@ export default function App() {
             Contact
           </h2>
 
-          <p className="text-white/70 mb-16" style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.125rem', lineHeight: '1.7' }}>
-            I engage with high-impact opportunities. If you are building infrastructure for SEA, submit a brief.
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-12">
-            <div>
-              <label htmlFor="name" className="sr-only">Name</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="w-full bg-transparent border-b border-white/20 border-t-0 border-l-0 border-r-0 pb-4 text-white placeholder-white/40 focus:border-[#E70100] focus:outline-none transition-colors duration-300"
-                style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.125rem', fontWeight: 400, borderRadius: '0px' }}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="sr-only">Email</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="w-full bg-transparent border-b border-white/20 border-t-0 border-l-0 border-r-0 pb-4 text-white placeholder-white/40 focus:border-[#E70100] focus:outline-none transition-colors duration-300"
-                style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.125rem', fontWeight: 400, borderRadius: '0px' }}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="sr-only">Message</label>
-              <textarea
-                id="message"
-                placeholder="Message"
-                value={formData.intent}
-                onChange={(e) => setFormData({ ...formData, intent: e.target.value })}
-                required
-                rows={5}
-                className="w-full bg-transparent border-b border-white/20 border-t-0 border-l-0 border-r-0 pb-4 text-white placeholder-white/40 focus:border-[#E70100] focus:outline-none transition-colors duration-300 resize-none"
-                style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.125rem', fontWeight: 400, borderRadius: '0px' }}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-[#E70100] text-white px-16 py-5 uppercase tracking-wide hover:bg-[#FF1A1A] transition-all duration-300 cursor-pointer"
-              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, fontSize: '0.875rem', letterSpacing: '0.1em', borderRadius: '0px' }}
-            >
-              SEND MESSAGE
-            </button>
-          </form>
+          <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/nayokow/30min"
+            style={{ minWidth: '320px', height: '700px' }}
+          />
         </div>
       </section>
 
