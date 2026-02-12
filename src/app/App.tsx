@@ -4,12 +4,17 @@ const heroImage = '/images/hero-portrait.png';
 const speakingImage1 = '/images/speaking-1.jpg';
 const speakingImage2 = '/images/speaking-2.jpg';
 const speakingImage3 = '/images/speaking-3.jpg';
+const speakingWorkshop = '/images/speaking-workshop.jpg';
+const speakingPlugAndPlay = '/images/speaking-plugandplay.jpg';
+const speakingLiputan6 = '/images/speaking-liputan6.jpg';
 const podcastImage = '/images/podcast-feature.jpg';
 const nkLogo = '/images/nk-logo.png';
 const prestigeArticle = '/images/article-prestige.jpg';
 const businessArticle = '/images/article-business.jpeg';
 const indonesiaArticle = '/images/article-indonesia.jpg';
 const magazineArticle = '/images/article-magazine.jpeg';
+const marketeersArticle = '/images/article-marketeers.jpg';
+const teamAlgoritma = '/images/team-algoritma.jpeg';
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -287,9 +292,12 @@ export default function App() {
           {/* Speaking engagements grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { src: speakingImage1, alt: 'Speaking Event' },
-              { src: speakingImage2, alt: 'Panel Discussion' },
-              { src: speakingImage3, alt: 'Keynote Address' },
+              { src: speakingImage1, alt: 'Keynote Presentation' },
+              { src: speakingImage2, alt: 'Disrupto Arena Panel' },
+              { src: speakingImage3, alt: '@america Speaking Event' },
+              { src: speakingWorkshop, alt: 'Workshop Facilitation' },
+              { src: speakingPlugAndPlay, alt: 'GK Plug and Play Stage' },
+              { src: speakingLiputan6, alt: 'Liputan6 TV Interview' },
             ].map((img) => (
               <div key={img.alt} className="border border-white/20 hover:border-[#E70100] transition-all duration-300 cursor-pointer overflow-hidden group">
                 <img src={img.src} alt={img.alt} className="w-full h-[280px] object-cover group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
@@ -314,17 +322,28 @@ export default function App() {
           </h2>
 
           {/* Featured Publications Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
-              { src: prestigeArticle, alt: 'Prestige Magazine Feature' },
-              { src: businessArticle, alt: 'Business Magazine Feature' },
-              { src: indonesiaArticle, alt: 'Indonesia Kini Feature' },
-              { src: magazineArticle, alt: 'Forbes Asia Feature' },
+              { src: prestigeArticle, alt: 'Prestige Magazine — 40 Under 40' },
+              { src: businessArticle, alt: 'SWA Business Magazine Feature' },
+              { src: indonesiaArticle, alt: 'Media Indonesia Feature' },
+              { src: magazineArticle, alt: 'The Creators Magazine' },
+              { src: marketeersArticle, alt: 'Marketeers Magazine Feature' },
             ].map((img) => (
               <div key={img.alt} className="border border-white/20 hover:border-[#E70100] transition-all duration-300 cursor-pointer overflow-hidden group">
                 <img src={img.src} alt={img.alt} className="w-full h-[320px] object-cover group-hover:opacity-90 transition-opacity duration-300" loading="lazy" />
               </div>
             ))}
+          </div>
+
+          {/* Team Photo */}
+          <div className="mb-20">
+            <div className="border border-white/20 hover:border-[#E70100] transition-all duration-300 overflow-hidden">
+              <img src={teamAlgoritma} alt="Algoritma Data Science Team" className="w-full h-[400px] object-cover" loading="lazy" />
+            </div>
+            <div className="mt-4 text-white/40" style={{ fontFamily: 'Roboto Mono, monospace', fontSize: '0.75rem', letterSpacing: '0.05em' }}>
+              ALGORITMA DATA SCIENCE — CORPORATE TRAINING SESSION
+            </div>
           </div>
 
           {/* Article List */}
