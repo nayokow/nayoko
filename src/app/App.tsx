@@ -49,7 +49,7 @@ const eyebrow = {
 const navItems = [
   { id: 'track-record', label: 'Track Record' },
   { id: 'experience', label: 'Experience' },
-  { id: 'practice', label: 'AI Practice' },
+  { id: 'training', label: 'Training' },
   { id: 'writing', label: 'Writing' },
 ];
 
@@ -297,14 +297,14 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 04: AI PRACTICE */}
-      <section id="practice" className="px-6 md:px-12 lg:px-24 py-32 border-t border-white/10">
+      {/* SECTION 04: EXECUTIVE EDUCATION */}
+      <section id="training" className="px-6 md:px-12 lg:px-24 py-32 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <h2 className="uppercase tracking-[-0.03em] mb-6" style={sectionHeading}>
-            AI Practice
+            Executive Education
           </h2>
           <div className="text-white/50 uppercase mb-16" style={eyebrow}>
-            Executive education &bull; Speaking &bull; Selected advisory
+            AI training for leadership teams &bull; Speaking
           </div>
 
           {/* Thesis */}
@@ -322,7 +322,7 @@ export default function App() {
                 Adding a model to that system produces demos, not transformation.
               </p>
               <p>
-                I work on three layers at once, because they move together. Agents change workflows,
+                I teach the three layers together, because they move together. Agents change workflows,
                 workflows change roles, roles change the skills you need, and skills decide how much
                 autonomy you can safely hand to agents. Transformation moves at the speed of its slowest layer.
               </p>
@@ -375,7 +375,7 @@ export default function App() {
           </div>
 
           {/* Offerings */}
-          <div className="text-[#E70100] uppercase mb-8" style={eyebrow}>Engagements</div>
+          <div className="text-[#E70100] uppercase mb-8" style={eyebrow}>Programmes</div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
             {offerings.map((offer) => (
               <div key={offer.title} className="border border-white/10 hover:border-[#E70100] transition-colors duration-300 p-8 flex flex-col">
@@ -525,7 +525,7 @@ export default function App() {
             Contact
           </h2>
           <p className="text-white/70 mb-10" style={{ fontFamily: inter, fontSize: '1rem', lineHeight: '1.7' }}>
-            For speaking, executive programmes and advisory enquiries, book a time below or write to{' '}
+            For speaking and executive programme enquiries, book a time below or write to{' '}
             <a href={`mailto:${profile.email}`} className="text-white underline decoration-[#E70100] underline-offset-4 hover:text-[#E70100] transition-colors duration-300">
               {profile.email}
             </a>.
