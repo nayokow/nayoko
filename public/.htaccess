@@ -1,0 +1,37 @@
+# Server security settings for Apache (Bluehost). Lives in public/ so every
+# build ships it alongside the site.
+
+# This site is static HTML: refuse every request for a PHP file, so PHP
+# vulnerabilities such as PHP2Shell (CVE-2026-109618/109619) cannot be reached
+# through it. Also covers upper case and double extensions like x.php.jpg,
+# which Apache would otherwise still hand to PHP.
+<FilesMatch "(?i)\.(php\d*|phtml|phar)(\.|$)">
+  Require all denied
+</FilesMatch>
+
+# Serve the site's own home page, never a leftover index.php.
+DirectoryIndex index.html
+
+# Don't list folder contents (e.g. /images/).
+Options -Indexes
+
+# Always use HTTPS. The X-Forwarded-Proto check prevents a redirect loop when
+# a CDN such as Cloudflare sits in front of the site.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Browsers remember to only use HTTPS for this site for a year.
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # No other site may show this one inside a frame (clickjacking). The rest
+  # of the Content Security Policy is in the page itself (vite.config.ts).
+  Header always set X-Frame-Options "DENY"
+  Header always set Content-Security-Policy "frame-ancestors 'none'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
